@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35312.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlmLesson01", "PlmLesson01.csproj", "{25C81773-BF23-4BE1-8CCD-C652C9CF2B70}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlmLessonMVC", "..\PlmLessonMVC\PlmLessonMVC.csproj", "{FF692EF8-1867-4787-A857-70C4DDEACC62}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{25C81773-BF23-4BE1-8CCD-C652C9CF2B70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25C81773-BF23-4BE1-8CCD-C652C9CF2B70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25C81773-BF23-4BE1-8CCD-C652C9CF2B70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25C81773-BF23-4BE1-8CCD-C652C9CF2B70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF692EF8-1867-4787-A857-70C4DDEACC62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF692EF8-1867-4787-A857-70C4DDEACC62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF692EF8-1867-4787-A857-70C4DDEACC62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF692EF8-1867-4787-A857-70C4DDEACC62}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FF37035B-DF69-44F9-8516-A2E0473D174C}
+	EndGlobalSection
+EndGlobal
