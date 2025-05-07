@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\PlmLesson03.props" />
+</Project>

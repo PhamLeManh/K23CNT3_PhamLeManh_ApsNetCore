@@ -1,0 +1,122 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\phaml\\source\\repos\\PlmLession02\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{448FE434-364D-4494-B85E-F2FD4D4207EF}|PlmLession02.csproj|c:\\users\\phaml\\source\\repos\\plmlession02\\controllers\\plmproductcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{448FE434-364D-4494-B85E-F2FD4D4207EF}|PlmLession02.csproj|solutionrelative:controllers\\plmproductcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{448FE434-364D-4494-B85E-F2FD4D4207EF}|PlmLession02.csproj|c:\\users\\phaml\\source\\repos\\plmlession02\\views\\plmproduct\\plmindex.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{448FE434-364D-4494-B85E-F2FD4D4207EF}|PlmLession02.csproj|solutionrelative:views\\plmproduct\\plmindex.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{448FE434-364D-4494-B85E-F2FD4D4207EF}|PlmLession02.csproj|c:\\users\\phaml\\source\\repos\\plmlession02\\views\\shared\\_plmlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{448FE434-364D-4494-B85E-F2FD4D4207EF}|PlmLession02.csproj|solutionrelative:views\\shared\\_plmlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{448FE434-364D-4494-B85E-F2FD4D4207EF}|PlmLession02.csproj|c:\\users\\phaml\\source\\repos\\plmlession02\\controllers\\plmhomecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{448FE434-364D-4494-B85E-F2FD4D4207EF}|PlmLession02.csproj|solutionrelative:controllers\\plmhomecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{448FE434-364D-4494-B85E-F2FD4D4207EF}|PlmLession02.csproj|c:\\users\\phaml\\source\\repos\\plmlession02\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{448FE434-364D-4494-B85E-F2FD4D4207EF}|PlmLession02.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{448FE434-364D-4494-B85E-F2FD4D4207EF}|PlmLession02.csproj|c:\\users\\phaml\\source\\repos\\plmlession02\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{448FE434-364D-4494-B85E-F2FD4D4207EF}|PlmLession02.csproj|solutionrelative:views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PlmIndex.cshtml",
+              "DocumentMoniker": "C:\\Users\\phaml\\source\\repos\\PlmLession02\\Views\\PlmProduct\\PlmIndex.cshtml",
+              "RelativeDocumentMoniker": "Views\\PlmProduct\\PlmIndex.cshtml",
+              "ToolTip": "C:\\Users\\phaml\\source\\repos\\PlmLession02\\Views\\PlmProduct\\PlmIndex.cshtml",
+              "RelativeToolTip": "Views\\PlmProduct\\PlmIndex.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-06T13:50:44.476Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PlmProductController.cs",
+              "DocumentMoniker": "C:\\Users\\phaml\\source\\repos\\PlmLession02\\Controllers\\PlmProductController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PlmProductController.cs",
+              "ToolTip": "C:\\Users\\phaml\\source\\repos\\PlmLession02\\Controllers\\PlmProductController.cs",
+              "RelativeToolTip": "Controllers\\PlmProductController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T13:48:56.118Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Users\\phaml\\source\\repos\\PlmLession02\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "Views\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Users\\phaml\\source\\repos\\PlmLession02\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-06T13:43:26.023Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\phaml\\source\\repos\\PlmLession02\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\phaml\\source\\repos\\PlmLession02\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T13:38:42.846Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PlmHomeController.cs",
+              "DocumentMoniker": "C:\\Users\\phaml\\source\\repos\\PlmLession02\\Controllers\\PlmHomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PlmHomeController.cs",
+              "ToolTip": "C:\\Users\\phaml\\source\\repos\\PlmLession02\\Controllers\\PlmHomeController.cs",
+              "RelativeToolTip": "Controllers\\PlmHomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T13:33:47.588Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_PlmLayout.cshtml",
+              "DocumentMoniker": "C:\\Users\\phaml\\source\\repos\\PlmLession02\\Views\\Shared\\_PlmLayout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_PlmLayout.cshtml",
+              "ToolTip": "C:\\Users\\phaml\\source\\repos\\PlmLession02\\Views\\Shared\\_PlmLayout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_PlmLayout.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABoAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-06T13:29:41.099Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
