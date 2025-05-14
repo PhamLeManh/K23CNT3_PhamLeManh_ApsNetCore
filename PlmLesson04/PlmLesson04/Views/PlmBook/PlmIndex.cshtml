@@ -1,0 +1,55 @@
+﻿@model IEnumerable<PlmLesson04.Models.PlmBook>
+
+<h2>Danh sách sách</h2>
+
+<p>
+    <a asp-action="PlmCreate" class="btn btn-success">Thêm sách mới</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Tiêu đề</th>
+            <th>Mô tả</th>
+            <th>Giá</th>
+            <th>Trang</th>
+            <th>Ảnh</th>
+            <th>Hành động</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td>@book.Title</td>
+                <td>@book.Description</td>
+                <td>@book.PlmPrice</td>
+                <td>@book.PlmPages</td>
+                <td>
+                    <img src="@Url.Content(book.PlmImage)" alt="@book.Title" style="width: 100px; height: auto;" />
+                </td>
+                <td>
+                    <a asp-action="PlmEdit" asp-route-id="@book.Id" class="btn btn-warning">Chỉnh sửa</a>
+                    <button type="button" class="btn btn-danger" onclick="confirmDelete('@book.Id')">Xóa</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts {
+    <script>
+        function confirmDelete(id) {
+            if (confirm('Bạn có chắc chắn muốn xóa sách này?')) {
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("PlmDelete", "PlmBook")',
+                    data: { id: id },
+                    success: function () {
+                        window.location.href = '@Url.Action("PlmIndex", "PlmBook")';
+                    }
+                });
+            }
+        }
+    </script>
+}

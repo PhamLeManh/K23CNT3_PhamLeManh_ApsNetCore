@@ -1,0 +1,77 @@
+﻿@model PlmLesson04.Models.PlmBook
+
+@{
+    ViewData["Title"] = Model.Id == null ? "Thêm sách mới" : "Chỉnh sửa sách";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="@(Model.Id == null ? "PlmCreate" : "PlmEdit")">
+    @if (Model.Id != null)
+    {
+        <input type="hidden" asp-for="Id" />
+    }
+
+    <div class="form-group">
+        <label asp-for="Title" class="control-label"></label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Description" class="control-label"></label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="PlmImage" class="control-label"></label>
+        <input asp-for="PlmImage" class="form-control" />
+        <span asp-validation-for="PlmImage" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="PlmPrice" class="control-label"></label>
+        <input asp-for="PlmPrice" class="form-control" />
+        <span asp-validation-for="PlmPrice" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="PlmPages" class="control-label"></label>
+        <input asp-for="PlmPages" class="form-control" />
+        <span asp-validation-for="PlmPages" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">
+            @(Model.Id == null ? "Thêm sách" : "Cập nhật")
+        </button>
+
+        @if (Model.Id != null)
+        {
+            <button type="button" class="btn btn-danger"
+                    onclick="confirmDelete('@Model.Id')">
+                Xóa sách
+            </button>
+        }
+
+        <a asp-action="PlmIndex" class="btn btn-secondary">Quay lại danh sách</a>
+    </div>
+</form>
+
+@section Scripts {
+    <script>
+        function confirmDelete(id) {
+            if (confirm('Bạn có chắc chắn muốn xóa sách này?')) {
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("PlmDelete", "PlmBook")',  // Đảm bảo URL chính xác
+                    data: { id: id },
+                    success: function () {
+                        window.location.href = '@Url.Action("PlmIndex", "PlmBook")';
+                    }
+                });
+            }
+        }
+    </script>
+}

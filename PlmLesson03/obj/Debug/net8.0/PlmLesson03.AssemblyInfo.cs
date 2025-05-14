@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PlmLesson03")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0d7897ba5ef2b0871a6e1435bb1274a35ed822f5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cb59ef61e96a2739650369f728fd2096d74505e2")]
 [assembly: System.Reflection.AssemblyProductAttribute("PlmLesson03")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PlmLesson03")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
