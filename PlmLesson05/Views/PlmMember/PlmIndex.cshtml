@@ -1,0 +1,31 @@
+﻿@model IEnumerable<PlmLesson05.Models.DataModels.PlmMember>
+
+@{
+    ViewData["Title"] = "PlmIndex";
+}
+
+<h1>Danh Sach SInh Vien</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>UserName</th>
+            <th>Password</th>
+            <th>Full Name</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var plmItem in Model)
+        {
+            <tr>
+                <td>@plmItem.PlmMemberId</td>
+                <td>@plmItem.PlmMemberUseName</td>
+                <td>@plmItem.PlmMemberPassword</td>
+                <td>@plmItem.PlmMemberFullName</td>
+                <td>@plmItem.PlmMemberEmail</td>
+            </tr>
+        }
+    </tbody>
+</table>
