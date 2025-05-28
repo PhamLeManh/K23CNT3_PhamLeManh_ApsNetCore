@@ -1,0 +1,30 @@
+﻿<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm mb-4">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" asp-controller="PlmHome" asp-action="PlmIndex">
+            <img src="https://i.pinimg.com/736x/b2/63/20/b26320e2441ee87b4f4533dd7747c52a.jpg"
+                 alt="Logo"
+                 style="height: 40px; width: 40px; object-fit: cover;"
+                 class="me-2 rounded-circle border border-2 border-primary" />
+            <strong class="fs-5 text-primary">PlmLab06 - Phạm Lê Mạnh</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-dark px-3 fw-semibold" asp-controller="PlmHome" asp-action="PlmIndex">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark px-3 fw-semibold" asp-controller="PlmHome" asp-action="PlmAbout">Thông Tin Sinh Viên</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark px-3 fw-semibold" asp-controller="PlmEmployee" asp-action="PlmIndex">Danh Sách Nhân Viên</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

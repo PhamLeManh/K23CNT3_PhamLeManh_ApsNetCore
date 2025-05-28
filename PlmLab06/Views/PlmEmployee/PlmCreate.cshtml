@@ -1,0 +1,54 @@
+﻿@model PlmLab06.Models.PlmEmployee
+@{
+    ViewData["Title"] = "Them Moi Nhan Vien";
+}
+
+<h2>Thêm mới nhân viên</h2>
+
+<form asp-action="PlmCreate" method="post" class="row g-3">
+    <div class="col-md-6">
+        <label asp-for="PlmName" class="form-label">Họ Tên</label>
+        <input asp-for="PlmName" class="form-control" />
+        <span asp-validation-for="PlmName" class="text-danger"></span>
+    </div>
+
+    <div class="col-md-6">
+        <label asp-for="PlmBirthDay" class="form-label">Ngày Sinh</label>
+        <input asp-for="PlmBirthDay" type="date" class="form-control" />
+        <span asp-validation-for="PlmBirthDay" class="text-danger"></span>
+    </div>
+
+    <div class="col-md-6">
+        <label asp-for="PlmEmail" class="form-label">Email</label>
+        <input asp-for="PlmEmail" type="email" class="form-control" />
+        <span asp-validation-for="PlmEmail" class="text-danger"></span>
+    </div>
+
+    <div class="col-md-6">
+        <label asp-for="PlmPhone" class="form-label">Điện Thoại</label>
+        <input asp-for="PlmPhone" class="form-control" />
+        <span asp-validation-for="PlmPhone" class="text-danger"></span>
+    </div>
+
+    <div class="col-md-6">
+        <label asp-for="PlmSalary" class="form-label">Lương</label>
+        <input asp-for="PlmSalary" type="number" step="1000" class="form-control" />
+        <span asp-validation-for="PlmSalary" class="text-danger"></span>
+    </div>
+
+    <div class="col-md-6">
+        <label asp-for="PlmStatus" class="form-label">Trạng Thái</label>
+        <select asp-for="PlmStatus" class="form-select">
+            <option value="true">Đang làm</option>
+            <option value="false">Nghỉ</option>
+        </select>
+        <span asp-validation-for="PlmStatus" class="text-danger"></span>
+    </div>
+
+    <div class="col-12">
+        <button type="submit" class="btn btn-success">Thêm mới</button>
+        <a asp-action="PlmIndex" class="btn btn-secondary ms-2">Hủy</a>
+    </div>
+</form>
+
+

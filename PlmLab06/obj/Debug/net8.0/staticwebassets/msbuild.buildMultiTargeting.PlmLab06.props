@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\PlmLab06.props" />
+</Project>

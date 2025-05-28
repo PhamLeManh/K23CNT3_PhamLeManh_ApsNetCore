@@ -1,0 +1,73 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = PlmLab06
+build_property.RootNamespace = PlmLab06
+build_property.ProjectDir = D:\TaiLieu\ApsNetCore\K23CNT3_PhamLeManh_ApsNetCore\PlmLab06\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\TaiLieu\ApsNetCore\K23CNT3_PhamLeManh_ApsNetCore\PlmLab06
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
+
+[D:/TaiLieu/ApsNetCore/K23CNT3_PhamLeManh_ApsNetCore/PlmLab06/Views/PlmEmployee/PlmCreate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxtRW1wbG95ZWVcUGxtQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/TaiLieu/ApsNetCore/K23CNT3_PhamLeManh_ApsNetCore/PlmLab06/Views/PlmEmployee/PlmEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxtRW1wbG95ZWVcUGxtRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/TaiLieu/ApsNetCore/K23CNT3_PhamLeManh_ApsNetCore/PlmLab06/Views/PlmEmployee/PlmIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxtRW1wbG95ZWVcUGxtSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/TaiLieu/ApsNetCore/K23CNT3_PhamLeManh_ApsNetCore/PlmLab06/Views/PlmHome/PlmAbout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxtSG9tZVxQbG1BYm91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/TaiLieu/ApsNetCore/K23CNT3_PhamLeManh_ApsNetCore/PlmLab06/Views/PlmHome/PlmIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxtSG9tZVxQbG1JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/TaiLieu/ApsNetCore/K23CNT3_PhamLeManh_ApsNetCore/PlmLab06/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/TaiLieu/ApsNetCore/K23CNT3_PhamLeManh_ApsNetCore/PlmLab06/Views/Shared/_PlmNavBar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9QbG1OYXZCYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/TaiLieu/ApsNetCore/K23CNT3_PhamLeManh_ApsNetCore/PlmLab06/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/TaiLieu/ApsNetCore/K23CNT3_PhamLeManh_ApsNetCore/PlmLab06/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/TaiLieu/ApsNetCore/K23CNT3_PhamLeManh_ApsNetCore/PlmLab06/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/TaiLieu/ApsNetCore/K23CNT3_PhamLeManh_ApsNetCore/PlmLab06/Views/Shared/_PlmLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9QbG1MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-81s0l5ecjt
