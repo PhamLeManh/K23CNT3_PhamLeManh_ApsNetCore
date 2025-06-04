@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewData["Title"] - PlmLesson07</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/PlmLesson07.styles.css" asp-append-version="true" />
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f0f4ff, #d9e2ff);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navbar {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            background-color: #ffffffcc;
+            backdrop-filter: saturate(180%) blur(10px);
+            transition: background-color 0.3s ease;
+        }
+
+            .navbar .nav-link {
+                color: #333333;
+                font-weight: 600;
+                transition: color 0.3s ease;
+            }
+
+                .navbar .nav-link:hover,
+                .navbar .nav-link:focus {
+                    color: #0d6efd;
+                    text-decoration: underline;
+                }
+
+        main {
+            flex-grow: 1;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+
+        footer.footer {
+            background-color: #f8f9fa;
+            padding: 1rem 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666666;
+            border-top: 1px solid #ddd;
+        }
+
+            footer.footer a {
+                color: #0d6efd;
+                text-decoration: none;
+                font-weight: 600;
+            }
+
+                footer.footer a:hover,
+                footer.footer a:focus {
+                    text-decoration: underline;
+                }
+    </style>
+</head>
+<body>
+    <partial name="_PlmNavBar" />
+
+    <div class="container">
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            &copy; 2025 - PlmLesson07 - <a asp-area="" asp-controller="PlmHome" asp-action="PlmAbout">ManhDepTrai</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

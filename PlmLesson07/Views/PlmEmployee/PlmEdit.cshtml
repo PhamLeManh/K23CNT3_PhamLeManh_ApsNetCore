@@ -1,0 +1,60 @@
+﻿@model PlmLesson07.Models.PlmEmployee
+
+@{
+    ViewData["Title"] = "PlmEdit";
+}
+
+<h1>PlmEdit</h1>
+
+<h4>PlmEmployee</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="PlmEdit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="PlmId" class="control-label"></label>
+                <input asp-for="PlmId" class="form-control" />
+                <span asp-validation-for="PlmId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PlmName" class="control-label"></label>
+                <input asp-for="PlmName" class="form-control" />
+                <span asp-validation-for="PlmName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PlmBirthDay" class="control-label"></label>
+                <input asp-for="PlmBirthDay" class="form-control" />
+                <span asp-validation-for="PlmBirthDay" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PlmEmail" class="control-label"></label>
+                <input asp-for="PlmEmail" class="form-control" />
+                <span asp-validation-for="PlmEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PlmPhone" class="control-label"></label>
+                <input asp-for="PlmPhone" class="form-control" />
+                <span asp-validation-for="PlmPhone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PlmSalary" class="control-label"></label>
+                <input asp-for="PlmSalary" class="form-control" />
+                <span asp-validation-for="PlmSalary" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="PlmStatus" /> @Html.DisplayNameFor(model => model.PlmStatus)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

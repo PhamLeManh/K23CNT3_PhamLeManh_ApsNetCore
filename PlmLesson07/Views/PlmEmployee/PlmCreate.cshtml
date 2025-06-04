@@ -1,0 +1,72 @@
+﻿@model PlmLesson07.Models.PlmEmployee
+
+@{
+    ViewData["Title"] = "Thêm Mới Nhân Viên";
+}
+
+<div class="container mt-5">
+    <div class="card shadow rounded">
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">@ViewData["Title"]</h4>
+        </div>
+        <div class="card-body">
+            <form asp-action="PlmCreate" method="post" novalidate>
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                <div class="mb-3">
+                    <label asp-for="PlmId" class="form-label"></label>
+                    <input asp-for="PlmId" class="form-control" />
+                    <span asp-validation-for="PlmId" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="PlmName" class="form-label"></label>
+                    <input asp-for="PlmName" class="form-control" />
+                    <span asp-validation-for="PlmName" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="PlmBirthDay" class="form-label"></label>
+                    <input asp-for="PlmBirthDay" type="date" class="form-control" />
+                    <span asp-validation-for="PlmBirthDay" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="PlmEmail" class="form-label"></label>
+                    <input asp-for="PlmEmail" type="email" class="form-control" />
+                    <span asp-validation-for="PlmEmail" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="PlmPhone" class="form-label"></label>
+                    <input asp-for="PlmPhone" class="form-control" />
+                    <span asp-validation-for="PlmPhone" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="PlmSalary" class="form-label"></label>
+                    <input asp-for="PlmSalary" type="number" step="1000" class="form-control" />
+                    <span asp-validation-for="PlmSalary" class="text-danger small"></span>
+                </div>
+
+                <div class="form-check mb-3">
+                    <input asp-for="PlmStatus" class="form-check-input" />
+                    <label asp-for="PlmStatus" class="form-check-label"></label>
+                </div>
+
+                <div class="d-flex justify-content-start">
+                    <button type="submit" class="btn btn-success me-2">
+                        <i class="bi bi-plus-circle"></i> Thêm mới
+                    </button>
+                    <a asp-action="PlmIndex" class="btn btn-outline-secondary">
+                        <i class="bi bi-arrow-left-circle"></i> Quay lại
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}
