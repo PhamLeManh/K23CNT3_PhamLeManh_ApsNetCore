@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<style>
+    .video-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        z-index: -1; 
+        filter: brightness(0.6); 
+    }
+
+    
+    .content-overlay {
+        position: relative;
+        z-index: 1;
+        color: white;
+        padding: 120px 20px;
+        text-align: center;
+    }
+</style>
+
+<video autoplay muted loop class="video-background">
+    <source src="~/videos/video4k.mp4" type="video/mp4" />
+</video>
+
+

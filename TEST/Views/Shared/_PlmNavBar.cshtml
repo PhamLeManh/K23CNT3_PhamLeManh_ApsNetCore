@@ -1,0 +1,180 @@
+﻿@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@{
+    var username = HttpContextAccessor.HttpContext.Session.GetString("username");
+}
+
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm mb-3">
+        <div class="container-fluid">
+
+            <!-- Menu bên trái + Thanh tìm kiếm -->
+            <div class="d-flex align-items-center me-auto">
+
+                <!-- MENU -->
+                <ul class="navbar-nav d-flex flex-row me-3">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white fw-semibold" href="#" id="trangchuDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            MENU
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="trangchuDropdown">
+                            <li><a class="dropdown-item" asp-controller="PlmProduct" asp-action="DoNu">Đồ nữ</a></li>
+                            <li><a class="dropdown-item" asp-controller="PlmProduct" asp-action="DoNam">Đồ nam</a></li>
+                            <li><a class="dropdown-item" asp-controller="PlmProduct" asp-action="TrangSuc">Trang sức</a></li>
+                            <li><a class="dropdown-item" asp-controller="PlmProduct" asp-action="DongHo">Đồng hồ</a></li>
+                            <li><hr class="dropdown-divider" /></li>
+                            <li class="dropdown-submenu dropend">
+                                <a class="dropdown-item dropdown-toggle" href="#" id="dichvuDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Dịch vụ
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="dichvuDropdown">
+                                    <li><a class="dropdown-item" href="#">Dịch vụ bảo hành PHAM LE MANH</a></li>
+                                    <li><a class="dropdown-item" href="#">Dịch vụ cá nhân</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </li>
+                </ul>
+
+                <!-- Tìm kiếm -->
+                <form class="d-flex align-items-center" role="search" style="min-width: 200px; position: relative;" onsubmit="return false;">
+                    <input id="searchInput"
+                           class="form-control form-control-sm"
+                           type="search"
+                           placeholder="Tìm kiếm..."
+                           aria-label="Search"
+                           style="border-radius: 20px; padding-right: 40px; box-shadow: none;"
+                           onkeydown="if(event.key === 'Enter'){ event.preventDefault(); }">
+                    <button class="btn btn-outline-light btn-sm"
+                            type="button"
+                            style="
+                            position: absolute;
+                            right: 5px;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            border-radius: 50%;
+                            width: 30px;
+                            height: 30px;
+                            padding: 0;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 16px;
+                        "
+                            title="Tìm kiếm"
+                            onclick="submitSearch()">
+                        🔍
+                    </button>
+                </form>
+            </div>
+
+            <!-- Logo trung tâm -->
+            <a class="navbar-brand mx-auto fw-bold fs-4 text-white"
+               asp-controller="PlmHome" asp-action="PlmIndex"
+               style="position: absolute; left: 50%; transform: translateX(-50%); white-space: nowrap;">
+                CENTRAL CEE <span class="text-warning">colab</span> PHAM LE MANH
+            </a>
+
+
+            <!-- Liên hệ + Đăng nhập / Tài khoản -->
+            <ul class="navbar-nav d-flex flex-row align-items-center gap-2 ms-auto">
+                <!-- Liên hệ -->
+                <li class="nav-item dropdown" id="contactDropdown">
+                    <a class="nav-link text-white fw-semibold dropdown-toggle" href="#" id="contactDropdownToggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Liên hệ với chúng tôi
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end p-3" aria-labelledby="contactDropdownToggle" style="min-width: 250px;">
+                        <li><strong>Điện thoại:</strong> 079 907 996 36</li>
+                        <li><strong>Email:</strong> phamlemanh070205@gmail.com</li>
+                        <li><strong>Địa chỉ:</strong> ThanhHoaCity</li>
+                    </ul>
+                </li>
+
+                <!-- Đăng nhập hoặc tên user -->
+                @if (!string.IsNullOrEmpty(username))
+                {
+                    <li class="nav-item">
+                        <a class="nav-link text-white fw-semibold" href="#">
+                            @username
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-light btn-sm fw-semibold rounded-pill px-3" asp-controller="PlmAccount" asp-action="Logout" role="button">
+                            Đăng xuất
+                        </a>
+                    </li>
+                }
+                else
+                {
+                    <li class="nav-item">
+                        <a class="btn btn-outline-light btn-sm fw-semibold rounded-pill px-3" asp-controller="PlmAccount" asp-action="PlmLogin" role="button">
+                            Đăng nhập
+                        </a>
+                    </li>
+                }
+            </ul>
+
+            <!-- Hamburger mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                    style="position: relative; z-index: 10;">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+
+        <!-- CSS hỗ trợ dropdown submenu -->
+        <style>
+            .dropdown-submenu {
+                position: relative;
+            }
+
+                .dropdown-submenu > .dropdown-menu {
+                    top: 0;
+                    left: 100%;
+                    margin-left: 0.1rem;
+                    margin-right: 0.1rem;
+                }
+        </style>
+    </nav>
+</header>
+
+<script>
+    // Hover submenu
+    document.querySelectorAll('.dropdown-submenu > a').forEach(function (element) {
+        element.addEventListener('mouseover', function () {
+            let nextEl = element.nextElementSibling;
+            if (nextEl) {
+                nextEl.classList.add('show');
+            }
+        });
+        element.addEventListener('mouseout', function () {
+            let nextEl = element.nextElementSibling;
+            if (nextEl) {
+                nextEl.classList.remove('show');
+            }
+        });
+    });
+
+    // Hover "Liên hệ với chúng tôi"
+    const contactDropdown = document.getElementById('contactDropdown');
+    contactDropdown.addEventListener('mouseenter', () => {
+        const dropdownMenu = contactDropdown.querySelector('.dropdown-menu');
+        dropdownMenu.classList.add('show');
+        contactDropdown.querySelector('a').setAttribute('aria-expanded', 'true');
+    });
+    contactDropdown.addEventListener('mouseleave', () => {
+        const dropdownMenu = contactDropdown.querySelector('.dropdown-menu');
+        dropdownMenu.classList.remove('show');
+        contactDropdown.querySelector('a').setAttribute('aria-expanded', 'false');
+    });
+
+    // Tìm kiếm
+    function submitSearch() {
+        const query = document.getElementById('searchInput').value.trim();
+        if (query.length === 0) {
+            alert('Vui lòng nhập từ khóa tìm kiếm');
+            return;
+        }
+        alert('Tìm kiếm: ' + query);
+    }
+</script>

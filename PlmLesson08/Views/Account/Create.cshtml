@@ -1,0 +1,77 @@
+﻿@model Account
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<form asp-action="Create" method="post">
+    <div>
+        <label>Id</label>
+        <input asp-for="Id" class="form-control" readonly />
+    </div>
+
+    <div>
+        <label>Họ và tên</label>
+        <input asp-for="HoVaTen" class="form-control" />
+        <span asp-validation-for="HoVaTen" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label>Địa chỉ Email</label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label>Số điện thoại</label>
+        <input asp-for="SoDienThoai" class="form-control" />
+        <span asp-validation-for="SoDienThoai" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label>Địa chỉ thường trú</label>
+        <input asp-for="DiaChiThuongTru" class="form-control" />
+        <span asp-validation-for="DiaChiThuongTru" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label>Ảnh đại diện</label>
+        <input asp-for="AnhDaiDien" class="form-control" />
+        <span asp-validation-for="AnhDaiDien" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label>Ngày sinh</label>
+        <input asp-for="NgaySinh" class="form-control" type="date" />
+        <span asp-validation-for="NgaySinh" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label>Giới tính</label>
+        <input asp-for="GioiTinh" class="form-control" />
+        <span asp-validation-for="GioiTinh" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label>Mật khẩu</label>
+        <input asp-for="MatKhau" class="form-control" type="password" />
+        <span asp-validation-for="MatKhau" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label>Link Facebook cá nhân</label>
+        <input asp-for="LinkFacebook" class="form-control" />
+        <span asp-validation-for="LinkFacebook" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success">Create</button>
+    <a asp-action="Index">Back to List</a>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

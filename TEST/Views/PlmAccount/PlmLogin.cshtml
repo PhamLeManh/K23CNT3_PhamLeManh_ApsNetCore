@@ -1,0 +1,81 @@
+﻿@model TEST.Models.PlmUserModel
+@{
+    ViewData["Title"] = "Đăng nhập / Đăng ký";
+    Layout = "_PlmLayout";
+}
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class="container mt-5" style="max-width: 500px;">
+    
+
+    @if (ViewBag.LoginError != null)
+    {
+        <div class="alert alert-danger">@ViewBag.LoginError</div>
+    }
+
+    <form method="post" asp-action="PlmLogin">
+        @Html.AntiForgeryToken() <!-- Thêm token chống CSRF -->
+
+        <input type="hidden" id="formMode" name="formMode" value="login" />
+
+        <div class="mb-3">
+            <label class="form-label">Tài khoản</label>
+            <input asp-for="Username" class="form-control" />
+            <span asp-validation-for="Username" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Mật khẩu</label>
+            <input asp-for="Password" type="password" class="form-control" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3" id="confirmPasswordGroup" style="display:none;">
+            <label class="form-label">Xác nhận mật khẩu</label>
+            <input name="ConfirmPassword" type="password" class="form-control" />
+        </div>
+
+        <button type="submit" id="submitBtn" class="btn btn-primary w-100 mb-3">Đăng nhập</button>
+
+        <div class="text-center">
+            <span id="toggleText">Bạn chưa có tài khoản? </span>
+            <a href="#" id="toggleLink">Đăng ký ngay</a>
+        </div>
+    </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+
+<script>
+    const toggleLink = document.getElementById('toggleLink');
+    const confirmPasswordGroup = document.getElementById('confirmPasswordGroup');
+    const formModeInput = document.getElementById('formMode');
+    const submitBtn = document.getElementById('submitBtn');
+    const toggleText = document.getElementById('toggleText');
+
+    toggleLink.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        if (formModeInput.value === 'login') {
+            // Chuyển sang đăng ký
+            formModeInput.value = 'register';
+            confirmPasswordGroup.style.display = 'block';
+            submitBtn.textContent = 'Đăng ký';
+            toggleText.textContent = 'Bạn đã có tài khoản? ';
+            toggleLink.textContent = 'Đăng nhập';
+            // Cập nhật form action nếu bạn có xử lý đăng ký riêng
+            // form.action = '/PlmAccount/PlmRegister';
+        } else {
+            // Chuyển sang đăng nhập
+            formModeInput.value = 'login';
+            confirmPasswordGroup.style.display = 'none';
+            submitBtn.textContent = 'Đăng nhập';
+            toggleText.textContent = 'Bạn chưa có tài khoản? ';
+            toggleLink.textContent = 'Đăng ký ngay';
+            // form.action = '/PlmAccount/PlmLogin';
+        }
+    });
+</script>

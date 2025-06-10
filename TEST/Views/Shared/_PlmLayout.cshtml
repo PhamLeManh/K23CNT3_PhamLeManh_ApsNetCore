@@ -1,0 +1,84 @@
+﻿@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewData["Title"] - PhamLeManh</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="~/css/site.css" />
+
+    <style>
+        /* Đảm bảo footer luôn nằm dưới cùng */
+        body, html {
+            height: 100%;
+        }
+
+        .page-wrapper {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main.content {
+            flex: 1 0 auto;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        footer.page-footer {
+            flex-shrink: 0;
+            background-color: #0d6efd; /* Bootstrap primary */
+            color: white;
+            padding: 1rem 0;
+            font-size: 0.9rem;
+        }
+
+            footer.page-footer a {
+                color: #ffc107; /* Bootstrap warning */
+                text-decoration: underline;
+            }
+
+                footer.page-footer a:hover {
+                    color: #e0a800;
+                    text-decoration: none;
+                }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+
+        <!-- Navbar -->
+        @await Html.PartialAsync("_PlmNavBar")
+
+        <!-- Nội dung trang -->
+        <main class="content container">
+            @RenderBody()
+        </main>
+
+        <!-- Footer -->
+        <footer class="page-footer text-center">
+            <div class="container">
+                <p class="mb-0">
+                    © 2025 PhamLeManh. &nbsp;
+                    <a asp-controller="PlmHome" asp-action="PlmAbout" title="Giới thiệu website">
+                        Giới thiệu website
+                    </a>
+                </p>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Bootstrap JS Bundle (Popper.js included) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom scripts -->
+    <script src="~/js/site.js"></script>
+</body>
+</html>

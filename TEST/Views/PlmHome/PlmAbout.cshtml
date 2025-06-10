@@ -1,0 +1,91 @@
+﻿@{
+    ViewData["Title"] = "Giới thiệu";
+    Layout = "_PlmLayout"; 
+}
+
+<style>
+    /* Đặt video full màn hình làm nền */
+    .video-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        z-index: -1; /* nằm phía sau nội dung */
+        filter: brightness(0.6); /* làm mờ video để chữ nổi bật */
+    }
+
+    /* Nội dung phía trên video nền */
+    .content-overlay {
+        position: relative;
+        z-index: 1;
+        color: white;
+        padding: 120px 20px;
+        text-align: center;
+    }
+</style>
+
+<video autoplay muted loop class="video-background">
+    <source src="~/videos/video4k.mp4" type="video/mp4" />
+    Trình duyệt của bạn không hỗ trợ thẻ video.
+</video>
+
+@{
+    ViewData["Title"] = "Giới Thiệu";
+    Layout = "_PlmLayout";
+}
+
+<style>
+    .full-screen-intro {
+        height: 100vh; /* full màn hình chiều cao */
+        background: rgba(0, 0, 0, 0.75); /* nền tối mờ */
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* căn giữa dọc */
+        align-items: center; /* căn giữa ngang */
+        padding: 40px 20px;
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+        .full-screen-intro h1 {
+            font-size: 4rem;
+            margin-bottom: 30px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #ffc107;
+        }
+
+        .full-screen-intro p {
+            font-size: 1.4rem;
+            max-width: 900px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+</style>
+
+<div class="full-screen-intro">
+ 
+    <p>
+        PHAM LE MANH, một nhà sáng tạo đầy nhiệt huyết, đã có cơ hội kết hợp cùng
+        <strong>CENTRAL CEE</strong> — rapper đình đám với phong cách cá tính và đậm chất đường phố,
+        trong một dự án thời trang độc đáo. Cùng nhau, chúng tôi khai phá giới hạn giữa âm nhạc và thời trang,
+        tạo nên những thiết kế đặc sắc hợp tác với thương hiệu <em>Nike</em> danh tiếng toàn cầu.
+    </p>
+    <p>
+        Dự án colab này không chỉ đơn thuần là sự kết nối của hai lĩnh vực nghệ thuật mà còn là biểu tượng của sự sáng tạo không ngừng,
+        hướng đến phong cách sống hiện đại, năng động và đầy tự tin dành cho giới trẻ.
+    </p>
+    <p>
+        Những sản phẩm ra đời từ sự kết hợp này không chỉ thể hiện gu thẩm mỹ vượt thời gian mà còn là tuyên ngôn cá nhân,
+        giúp người mặc tự tin thể hiện chính mình trong mọi hoàn cảnh.
+    </p>
+    <p>
+        Chúng tôi hy vọng sẽ tiếp tục phát triển và mang đến những trải nghiệm mới mẻ, đột phá trong những dự án tiếp theo,
+        xứng đáng với sự mong đợi của cộng đồng yêu thời trang và âm nhạc.
+    </p>
+</div>
+
