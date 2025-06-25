@@ -1,0 +1,445 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Aram_Tft_22H</title>
+    <style>
+        body {
+            background: #f0f0f0;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        canvas {
+            border: 3px solid #333;
+            margin-top: 20px;
+            background: #cce6ff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        #controls {
+            margin-top: 15px;
+        }
+
+        .name-input {
+            margin: 5px;
+            width: 120px;
+            padding: 8px;
+            font-size: 16px;
+            border: 2px solid #4CAF50;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            margin: 10px 5px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+            button:hover {
+                background-color: #45a049;
+                transform: translateY(-2px);
+                box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            }
+
+        #winner {
+            margin: 25px auto;
+            font-size: 42px;
+            font-weight: bold;
+            color: #e91e63;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            padding: 15px;
+            background: rgba(255,255,255,0.8);
+            border-radius: 10px;
+            max-width: 800px;
+        }
+
+        #results-container {
+            display: none;
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 900px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+
+        #results-title {
+            font-size: 32px;
+            color: #2E8B57;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #4CAF50;
+            padding-bottom: 10px;
+        }
+
+        #podium {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            height: 300px;
+            margin: 30px 0;
+        }
+
+        .podium-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 15px;
+            position: relative;
+        }
+
+        .podium-place {
+            width: 120px;
+            font-size: 28px;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .podium-name {
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 22px;
+            color: #333;
+        }
+
+        .podium-speed {
+            font-size: 18px;
+            color: #666;
+        }
+
+        #all-results {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            font-size: 18px;
+        }
+
+            #all-results th {
+                background-color: #4CAF50;
+                color: white;
+                padding: 15px;
+                font-size: 20px;
+            }
+
+            #all-results td {
+                padding: 12px;
+                border-bottom: 1px solid #ddd;
+            }
+
+            #all-results tr:nth-child(even) {
+                background-color: #f9f9f9;
+            }
+
+            #all-results tr:hover {
+                background-color: #f1f1f1;
+            }
+
+        .medal {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+        .gold {
+            color: gold;
+        }
+
+        .silver {
+            color: silver;
+        }
+
+        .bronze {
+            color: #cd7f32;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .visible {
+            display: block;
+        }
+
+        .finish-line {
+            position: absolute;
+            right: 50px;
+            top: 0;
+            height: 100%;
+            width: 5px;
+            background: red;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="font-size: 36px; color: #2E8B57;">Aram_Tft_22H</h1>
+
+    <div id="nameInputs"></div>
+    <button id="startBtn">BẮT ĐẦU ĐUA!</button>
+    <button id="restartBtn" class="hidden">ĐUA LẠI</button>
+
+    <canvas id="raceCanvas" width="1000" height="400"></canvas>
+
+    <div id="winner" class="hidden"></div>
+
+    <div id="results-container">
+        <div id="results-title">KẾT QUẢ CUỘC ĐUA</div>
+        <div id="podium"></div>
+        <table id="all-results">
+            <thead>
+                <tr>
+                    <th>HẠNG</th>
+                    <th>TÊN</th>
+                    <th>KHOẢNG CÁCH</th>
+                    <th>TỐC ĐỘ</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script>
+        const canvas = document.getElementById("raceCanvas");
+        const ctx = canvas.getContext("2d");
+        const startBtn = document.getElementById("startBtn");
+        const restartBtn = document.getElementById("restartBtn");
+        const winnerDisplay = document.getElementById("winner");
+        const nameInputs = document.getElementById("nameInputs");
+        const resultsContainer = document.getElementById("results-container");
+        const podium = document.getElementById("podium");
+        const tbody = document.querySelector("#all-results tbody");
+
+        const NUM_DINOS = 10;
+        const RACE_TIME = 15000; // 15s
+        let dinos = [];
+        let raceStart = null;
+        let raceOver = false;
+
+        // Tạo ô nhập tên
+        for (let i = 0; i < NUM_DINOS; i++) {
+            const input = document.createElement("input");
+            input.placeholder = `${i+1}`;
+            input.className = "name-input";
+            nameInputs.appendChild(input);
+        }
+
+        // Tạo khủng long
+        function createDinos() {
+            dinos = [];
+            const inputs = document.querySelectorAll(".name-input");
+            for (let i = 0; i < NUM_DINOS; i++) {
+                dinos.push({
+                    name: inputs[i].value.trim() || `${i+1}`,
+                    x: 0,
+                    y: 30 + i * 35,
+                    speed: 1 + Math.random() * 2,
+                    baseSpeed: 0,
+                    finished: false,
+                    finishTime: 0,
+                    color: getRandomColor()
+                });
+            }
+        }
+
+        // Màu ngẫu nhiên cho khủng long
+        function getRandomColor() {
+            const colors = ['#FF5733', '#33FF57', '#3357FF', '#F3FF33', '#FF33F3',
+                            '#33FFF3', '#8A2BE2', '#FF6347', '#7CFC00', '#FFD700'];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        // Vẽ khủng long
+        function drawDinos() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Vẽ đường đua
+            ctx.strokeStyle = "#999";
+            ctx.setLineDash([5, 5]);
+            for (let i = 0; i < NUM_DINOS; i++) {
+                ctx.beginPath();
+                ctx.moveTo(0, 40 + i * 35);
+                ctx.lineTo(canvas.width, 40 + i * 35);
+                ctx.stroke();
+            }
+            ctx.setLineDash([]);
+
+            // Vạch đích
+            ctx.fillStyle = "red";
+            ctx.fillRect(canvas.width - 50, 0, 5, canvas.height);
+
+            dinos.forEach(dino => {
+                // Vẽ khủng long
+                ctx.fillStyle = dino.finished ? "#FFD700" : dino.color;
+                ctx.fillRect(dino.x, dino.y, 40, 25);
+
+                // Vẽ mắt
+                ctx.fillStyle = "white";
+                ctx.fillRect(dino.x + 30, dino.y + 5, 8, 8);
+                ctx.fillStyle = "black";
+                ctx.fillRect(dino.x + 33, dino.y + 8, 3, 3);
+
+                // Tên và tốc độ
+                ctx.fillStyle = "#000";
+                ctx.font = "bold 14px Arial";
+                ctx.fillText(dino.name, dino.x + 45, dino.y + 15);
+
+                ctx.font = "12px Arial";
+                ctx.fillText(`${dino.speed.toFixed(1)}x`, dino.x + 45, dino.y + 30);
+            });
+        }
+
+        // Hiển thị kết quả
+        function showResults() {
+            // Sắp xếp kết quả
+            const sortedDinos = [...dinos].sort((a, b) => {
+                if (a.finished && b.finished) return a.finishTime - b.finishTime;
+                if (a.finished) return -1;
+                if (b.finished) return 1;
+                return b.x - a.x;
+            });
+
+            // Hiển thị người chiến thắng
+            winnerDisplay.innerHTML = `🏆 <span style="color: #e91e63;">${sortedDinos[0].name}</span> ĐÃ CHIẾN THẮNG! 🏆`;
+            winnerDisplay.classList.remove("hidden");
+
+            // Tạo bục vinh danh
+            podium.innerHTML = '';
+            const podiumData = [
+                { height: 200, color: '#FFD700', medal: '🥇' },
+                { height: 150, color: '#C0C0C0', medal: '🥈' },
+                { height: 100, color: '#CD7F32', medal: '🥉' }
+            ];
+
+            for (let i = 0; i < Math.min(3, sortedDinos.length); i++) {
+                const step = document.createElement("div");
+                step.className = "podium-step";
+
+                const place = document.createElement("div");
+                place.className = "podium-place";
+                place.style.backgroundColor = podiumData[i].color;
+                place.style.height = `${podiumData[i].height}px`;
+                place.innerHTML = `<div style="font-size: 40px;">${podiumData[i].medal}</div>Hạng ${i+1}`;
+
+                const name = document.createElement("div");
+                name.className = "podium-name";
+                name.textContent = sortedDinos[i].name;
+
+                const speed = document.createElement("div");
+                speed.className = "podium-speed";
+                speed.textContent = `Tốc độ: ${sortedDinos[i].baseSpeed.toFixed(1)}x`;
+
+                step.appendChild(place);
+                step.appendChild(name);
+                step.appendChild(speed);
+                podium.appendChild(step);
+            }
+
+            // Điền bảng kết quả
+            tbody.innerHTML = '';
+            sortedDinos.forEach((dino, index) => {
+                const row = document.createElement("tr");
+
+                const rankCell = document.createElement("td");
+                if (index === 0) {
+                    rankCell.innerHTML = '<span class="medal gold">🥇</span> 1';
+                } else if (index === 1) {
+                    rankCell.innerHTML = '<span class="medal silver">🥈</span> 2';
+                } else if (index === 2) {
+                    rankCell.innerHTML = '<span class="medal bronze">🥉</span> 3';
+                } else {
+                    rankCell.textContent = index + 1;
+                }
+
+                const nameCell = document.createElement("td");
+                nameCell.textContent = dino.name;
+                nameCell.style.color = dino.color;
+                nameCell.style.fontWeight = "bold";
+
+                const distanceCell = document.createElement("td");
+                distanceCell.textContent = `${Math.min(dino.x, canvas.width - 50).toFixed(0)}m`;
+
+                const speedCell = document.createElement("td");
+                speedCell.textContent = `${dino.baseSpeed.toFixed(1)}x`;
+
+                row.appendChild(rankCell);
+                row.appendChild(nameCell);
+                row.appendChild(distanceCell);
+                row.appendChild(speedCell);
+
+                tbody.appendChild(row);
+            });
+
+            // Hiển thị kết quả
+            resultsContainer.style.display = "block";
+        }
+
+        // Cập nhật vị trí
+        function update(timestamp) {
+            if (!raceStart) {
+                raceStart = timestamp;
+                dinos.forEach(dino => dino.baseSpeed = dino.speed);
+            }
+
+            const elapsed = timestamp - raceStart;
+
+            dinos.forEach(dino => {
+                if (!dino.finished) {
+                    dino.x += dino.speed + Math.random() * 2;
+
+                    if (dino.x >= canvas.width - 50) {
+                        dino.finished = true;
+                        dino.finishTime = elapsed;
+                        dino.x = canvas.width - 50;
+                    }
+                }
+            });
+
+            if (elapsed < RACE_TIME) {
+                requestAnimationFrame(update);
+            } else if (!raceOver) {
+                raceOver = true;
+                showResults();
+                restartBtn.classList.remove("hidden");
+            }
+
+            drawDinos();
+        }
+
+        // Bắt đầu đua
+        startBtn.onclick = () => {
+            createDinos();
+            startBtn.classList.add("hidden");
+            nameInputs.classList.add("hidden");
+            winnerDisplay.classList.add("hidden");
+            resultsContainer.style.display = "none";
+            raceStart = null;
+            raceOver = false;
+            requestAnimationFrame(update);
+        };
+
+        // Đua lại
+        restartBtn.onclick = () => {
+            restartBtn.classList.add("hidden");
+            startBtn.classList.remove("hidden");
+            nameInputs.classList.remove("hidden");
+            winnerDisplay.classList.add("hidden");
+            resultsContainer.style.display = "none";
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        };
+    </script>
+</body>
+</html>

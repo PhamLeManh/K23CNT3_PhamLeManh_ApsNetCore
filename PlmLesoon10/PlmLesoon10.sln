@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlmLesoon10", "PlmLesoon10.csproj", "{1D645407-6F57-437D-9899-1BDA4B9DFD2F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1D645407-6F57-437D-9899-1BDA4B9DFD2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D645407-6F57-437D-9899-1BDA4B9DFD2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D645407-6F57-437D-9899-1BDA4B9DFD2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D645407-6F57-437D-9899-1BDA4B9DFD2F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {44CD2150-EF1F-42D9-884C-BA54A0D403EA}
+	EndGlobalSection
+EndGlobal
