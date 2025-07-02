@@ -1,0 +1,55 @@
+﻿@model PhamLeManh_2310900063.Models.PlmEmployee
+
+@{
+    ViewData["Title"] = "Sửa nhân viên";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="PlmEdit" method="post">
+            @Html.AntiForgeryToken()
+            <input type="hidden" asp-for="PlmEmpId" />
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="mb-3">
+                <label asp-for="PlmEmpName" class="form-label"></label>
+                <input asp-for="PlmEmpName" class="form-control" />
+                <span asp-validation-for="PlmEmpName" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="PlmEmpLevel" class="form-label"></label>
+                <input asp-for="PlmEmpLevel" class="form-control" />
+                <span asp-validation-for="PlmEmpLevel" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="PlmEmpStartDate" class="form-label"></label>
+                <input asp-for="PlmEmpStartDate" type="date" class="form-control" />
+                <span asp-validation-for="PlmEmpStartDate" class="text-danger"></span>
+            </div>
+
+            <div class="form-check mb-3">
+                <input class="form-check-input" asp-for="PlmEmpStatus" type="checkbox" />
+                <label class="form-check-label" asp-for="PlmEmpStatus"></label>
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+                <i class="fas fa-save me-1"></i> Lưu thay đổi
+            </button>
+            <a asp-action="PlmIndex" class="btn btn-secondary ms-2">
+                <i class="fas fa-arrow-left me-1"></i> Quay lại
+            </a>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,43 @@
+﻿@model PhamLeManh_2310900063.Models.PlmEmployee
+
+@{
+    ViewData["Title"] = "Thêm nhân viên";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="PlmCreate">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="PlmEmpName" class="control-label"></label>
+                <input asp-for="PlmEmpName" class="form-control" />
+                <span asp-validation-for="PlmEmpName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PlmEmpLevel" class="control-label"></label>
+                <input asp-for="PlmEmpLevel" class="form-control" />
+                <span asp-validation-for="PlmEmpLevel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PlmEmpStartDate" class="control-label"></label>
+                <input asp-for="PlmEmpStartDate" class="form-control" type="date" />
+                <span asp-validation-for="PlmEmpStartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="PlmEmpStatus" /> @Html.DisplayNameFor(model => model.PlmEmpStatus)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Thêm" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="PlmIndex" class="btn btn-secondary">Quay lại danh sách</a>
+</div>

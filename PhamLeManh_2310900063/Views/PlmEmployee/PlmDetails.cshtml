@@ -1,0 +1,41 @@
+﻿@model PhamLeManh_2310900063.Models.PlmEmployee
+
+@{
+    ViewData["Title"] = "Chi tiết nhân viên";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="card mb-3">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">Mã nhân viên</dt>
+            <dd class="col-sm-9">@Model.PlmEmpId</dd>
+
+            <dt class="col-sm-3">Tên nhân viên</dt>
+            <dd class="col-sm-9">@Model.PlmEmpName</dd>
+
+            <dt class="col-sm-3">Cấp bậc</dt>
+            <dd class="col-sm-9">@Model.PlmEmpLevel</dd>
+
+            <dt class="col-sm-3">Ngày bắt đầu</dt>
+            <dd class="col-sm-9">@Model.PlmEmpStartDate.ToString("dd/MM/yyyy")</dd>
+
+            <dt class="col-sm-3">Trạng thái</dt>
+            <dd class="col-sm-9">
+                <span class="badge @(Model.PlmEmpStatus ? "bg-success" : "bg-secondary")">
+                    @(Model.PlmEmpStatus ? "Đang làm" : "Nghỉ việc")
+                </span>
+            </dd>
+        </dl>
+    </div>
+</div>
+
+<div>
+    <a asp-action="PlmEdit" asp-route-id="@Model.PlmEmpId" class="btn btn-warning me-2">
+        <i class="fas fa-edit me-1"></i> Sửa
+    </a>
+    <a asp-action="PlmIndex" class="btn btn-secondary">
+        <i class="fas fa-arrow-left me-1"></i> Quay lại danh sách
+    </a>
+</div>

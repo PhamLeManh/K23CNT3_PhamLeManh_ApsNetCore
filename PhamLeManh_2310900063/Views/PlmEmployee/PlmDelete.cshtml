@@ -1,0 +1,23 @@
+﻿@model PhamLeManh_2310900063.Models.PlmEmployee
+
+@{
+    ViewData["Title"] = "Xóa nhân viên";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="alert alert-danger" role="alert">
+    Bạn có chắc chắn muốn xóa nhân viên <strong>@Model.PlmEmpName</strong> (Mã NV: @Model.PlmEmpId) không?
+</div>
+
+<form asp-action="PlmDeleteConfirmed" method="post">
+    @Html.AntiForgeryToken()
+    <input type="hidden" asp-for="PlmEmpId" />
+
+    <button type="submit" class="btn btn-danger">
+        <i class="fas fa-trash-alt me-1"></i> Xác nhận xóa
+    </button>
+    <a asp-action="PlmIndex" class="btn btn-secondary ms-2">
+        <i class="fas fa-arrow-left me-1"></i> Hủy bỏ
+    </a>
+</form>
